@@ -1,0 +1,21 @@
+<article class="card">
+  <div class="card-media">
+    <img src="assets/imagens_subestacoes/{{displayImage}}.png" alt="{{substation?.name || 'Substation'}}" />
+  </div>
+  <div class="card-body">
+    <h3 class="card-title">{{ substation?.name || '—' }}</h3>
+
+    <div class="relays">
+      <span class="relay" *ngFor="let r of substation?.relays || []">{{ r }}</span>
+    </div>
+
+    <div class="meta">
+      <small *ngIf="substation?.conclusao">Conclusão: {{ formatConclusao() }}</small>
+      <small>ID: {{ substation?.id || '—' }}</small>
+    </div>
+
+    <div class="actions">
+      <button class="btn primary">Ver detalhes</button>
+    </div>
+  </div>
+</article>
